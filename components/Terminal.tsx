@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { X } from "lucide-react";
 
 const COMMANDS = {
-  help: "Available commands: about, projects, skills, contact, clear, exit",
+  help: "Available commands: about, skills, experience, projects, contact, clear, exit",
   about: "Jatin Punjabi: Computer Engineering student @ BU with a concentration on Machine Learning.",
   skills: "Technical Skills: Python, JavaScript, TypeScript, Java, C/C++, Swift, HTML, CSS, MATLAB Bash/Zsh.",
-  projects: "Featured: Noogie, Typing Wars, Global Origins Plotter.",
+  experience: "Currently: SWE Intern @ Livelo. Prev: Research Intern @ BU PsychoLinguistics Lab. Type 'help' for more.",
+  projects: "Featured: Livelo Booking Widget, Livelo Admin Site, Noogie, DeepVerify.",
   contact: "Email: jpunjabi314@gmail.com | GitHub: jpunjabi314.",
 };
 

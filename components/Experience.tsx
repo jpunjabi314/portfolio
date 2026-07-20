@@ -1,30 +1,28 @@
-import Footer from "@/components/Footer"; // Adjust the path if your file is located elsewhere
-
 export default function Experience() {
   const experiences = [
     {
       role: "Software Engineering Intern",
       company: "Livelo",
-      period: "September 2025 - Present",
-      description: "Building a full-stack rental system using React, TypeScript, and Supabase. Designed schemas and real-time backend services in Supabase, Stripe, and Auth0. Implemented autonomous AI agents to automate internal workflows and customer support.",
+      period: "January 2026 - Present",
+      description: "Building a full-stack booking system with React, TypeScript, and Supabase that replaced Shopify, HubSpot, and Zapier, cutting Livelo's monthly software costs from $1,800 to roughly $150. Automated a booking workflow that previously required manual coordination across Asana, Shopify, and Zapier, reducing processing time per booking from 30-45 minutes to 10 minutes across 150-200+ orders/month. Built an admin platform (Supabase, Stripe, Postmark, Auth0) used by 50+ partner locations to manage pricing, inventory, bookings, and order flow, and shipped a real-time chat system with Ably in 2-3 weeks featuring persistence, notifications, read receipts, and file sharing.",
     },
     {
       role: "Undergraduate Research Intern - Data Analytics",
       company: "PsychoLinguistics Lab, Boston University",
-      period: "September 2025 - Present",
-      description: "Conducting advanced data analytics for a research study on bilingualism and morality using Python and pandas. Employing statistical modeling and generating data visualizations to support research findings.",
+      period: "September 2025 - May 2026",
+      description: "Filtering 320 raw survey responses down to 182 valid submissions and engineering 5 Moral Foundations Questionnaire subscores from 32 survey items using Python and pandas. Compared moral foundation scores across a 26-person bilingual subsample (14 English, 12 Hindi speakers), finding English speakers scored higher on all 5 foundations, with results presented at the Eastern Psychological Conference.",
     },
     {
       role: "Logistics Team",
       company: "BostonHacks",
       period: "January 2025 - Present",
-      description: "Planned and executed the Fall 2025 hackathon for 300+ students. Coordinated judges/vendors and event logistics by creating the 2025 Run of Show. Hosted a Mini-Hackathon to garner engagement.",
+      description: "Authored the full Run of Show for the Fall 2025 hackathon serving 300+ students, coordinating workshop and vendor scheduling on a 3-person logistics team. Hosted a Mini-Hackathon to garner engagement.",
     },
     {
       role: "IT Support Technician",
       company: "Boston University IT Help Center",
       period: "August 2024 - Present",
-      description: "Assisting clients with technical support via phone, walk-ins, and email while resolving hardware, software, and account issues. Logging and tracking service requests in ServiceNow and assisting faculty with code debugging.",
+      description: "Resolving 15-23 hardware, software, and account support tickets per shift via phone, walk-in, and email, logging each in ServiceNow and assisting faculty with code debugging.",
     },
     {
       role: "Student Leadership Coach & State Consultant",
@@ -36,13 +34,13 @@ export default function Experience() {
       role: "Undergraduate Researcher",
       company: "Human to Everything (H2X) Lab",
       period: "October 2025 - December 2025",
-      description: "Assisted in developing an ML model to analyze dog motion patterns using motion capture sensor data. Contributed to research on creating digital representations of canine kinematics.",
+      description: "Collected motion-capture sensor data across 5 dog studies and cleaned/edited JSON files for 100+ motion clips to support an ML model analyzing canine kinematics.",
     },
     {
       role: "Python Instructor",
       company: "Thinkland.ai",
       period: "April 2021 - August 2025",
-      description: "Created and taught a Python curriculum from basics to object-oriented programming for students in grades 5-8. Assigned programming projects and maintained communication with parents via detailed reports.",
+      description: "Taught a Python curriculum spanning basics through object-oriented programming to 50+ students in grades 5-8 over 4 years, designing one applied project per term. Recognized as a STAR Teacher, an honor held by roughly 4-5% of instructors, for curriculum quality and weekly family progress reporting.",
     },
     {
       role: "Director of Training & Curriculum Development",
@@ -53,7 +51,6 @@ export default function Experience() {
   ];
 
   return (
-    <>
       <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-16 tracking-tighter text-center">
@@ -79,8 +76,5 @@ export default function Experience() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </>
   );
 }

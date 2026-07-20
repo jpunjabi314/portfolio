@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Terminal as TerminalIcon, Mail } from "lucide-react";
 import Terminal from "./Terminal";
@@ -24,7 +25,16 @@ export default function Hero() {
           {!showTerminal ? (
             <motion.div key="bio" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center text-center max-w-3xl">
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full border-2 border-slate-200 dark:border-cyan-500/20 p-2 shadow-xl">
-                <img src="/images/profile-icon.jpg" alt="Jatin Punjabi" className="w-full h-full object-cover rounded-full" />
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/images/profile-icon.jpg"
+                    alt="Jatin Punjabi"
+                    fill
+                    sizes="(min-width: 768px) 160px, 128px"
+                    className="object-cover object-[center_20%] scale-125"
+                    priority
+                  />
+                </div>
               </div>
               
               <h1 className="text-5xl md:text-8xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter">Jatin Punjabi</h1>
@@ -34,8 +44,8 @@ export default function Hero() {
 
               <div className="flex flex-wrap justify-center gap-3 mb-10">
                 <a href="mailto:jpunjabi314@gmail.com" className="flex items-center gap-2 px-5 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-cyan-500/50 transition-all"><Mail size={18} /> Email</a>
-                <a href="https://github.com/jpunjabi314" target="_blank" className="flex items-center gap-2 px-5 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-cyan-500/50 transition-all"><GithubIcon size={18} /> GitHub</a>
-                <a href="https://linkedin.com/in/jatinpunjabi" target="_blank" className="flex items-center gap-2 px-5 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-cyan-500/50 transition-all"><LinkedinIcon size={18} /> LinkedIn</a>
+                <a href="https://github.com/jpunjabi314" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-cyan-500/50 transition-all"><GithubIcon size={18} /> GitHub</a>
+                <a href="https://linkedin.com/in/jatinpunjabi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-cyan-500/50 transition-all"><LinkedinIcon size={18} /> LinkedIn</a>
               </div>
 
               <button onClick={() => setShowTerminal(true)} className="flex items-center gap-2 px-10 py-4 bg-cyan-600 dark:bg-cyan-500 text-white dark:text-slate-950 font-black rounded-2xl hover:bg-cyan-700 dark:hover:bg-cyan-400 transition-all active:scale-95 shadow-xl uppercase text-xs tracking-widest">

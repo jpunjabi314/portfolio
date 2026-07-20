@@ -1,15 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
-import { X, ExternalLink, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from "@/components/Footer"; 
 
 type Project = {
   title: string;
   description: string;
   image: string;
   tags: string[];
-  link: string;
+  link?: string;
 };
 
 export default function Projects() {
@@ -27,6 +27,19 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      title: "Livelo Booking Widget",
+      description: "Live, production booking widget for Livelo, built solo as part of my Software Engineering internship. Embedded cross-origin via a lightweight JS snippet, it lets customers book bike rentals with delivery/pickup, guided rides, and accessories across 50+ locations. Backed by Supabase (Postgres + Deno Edge Functions) for orders, inventory, and pricing, with Auth0 passwordless OTP login, Stripe Elements for payments (a dev-token-gated test mode runs alongside live production keys), Postmark for server-rendered confirmation emails, and Mezmo for client-side error logging. Deployed on Vercel, with main as the auto-deploying production branch. Source code is under NDA and cannot be shared.",
+      image: "/images/booking-widget.png",
+      tags: ["React", "TypeScript", "Vite", "Supabase", "Deno Edge Functions", "Auth0", "Stripe", "Postmark", "Mezmo", "Vercel"],
+      link: "https://booking.livelo.cc/sydney"
+    },
+    {
+      title: "Livelo Admin Site",
+      description: "Internal admin dashboard for Livelo's multi-city bike-rental operations, built to match a locked design mockup pixel-for-pixel. Covers order management (list, detail, status lifecycle, cancellations, New/Edit Order wizards), a product/variant/fleet-unit catalogue with ROI tracking, full location configuration (delivery, pickup, couriers, guides, commissions), events and special dates, dashboards and reports, and an upcoming live chat/inbox spanning admin, partner, guide, and customer roles. Integrates Stripe, Postmark, Twilio, and Nominatim with role-based access for admin/partner/investor/guide staff, built in phases against a real Supabase schema and verified live at each step. Internal tool under NDA — no public link or source available.",
+      image: "/images/livelo-admin-site.png",
+      tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Postmark", "Twilio", "Nominatim"],
+    },
+    {
       title: "Noogie – Best Design @ PennApps XXVI",
       description: "An AI-powered news platform delivering unbiased summaries and interactive visualizations. Built scalable APIs and data pipelines to scrape, process, and normalize articles, with robust error handling. Integrated OpenAI’s API and custom classification models to cluster content, improving performance and UX.",
       image: "/images/noogie.png",
@@ -34,18 +47,18 @@ export default function Projects() {
       link: "https://github.com/ruslannnn2/noogie"
     },
     {
-      title: "Typing Wars",
-      description: "A single- and multi-player typing game with smooth UI transitions, responsive gameplay, and real-time scoring. Integrated Firebase Authentication and Firestore for user management, high score persistence, and game history. Added AI-powered feedback and performance analytics with OpenAI API.",
-      image: "/images/typewars.png",
-      tags: ["JavaScript", "Node.js", "Firebase", "OpenAI API", "HTML", "CSS"],
-      link: "https://github.com/jpunjabi314/TypingWars"
+      title: "DeepVerify",
+      description: "A backend proxy that intercepts media in transit and flags deepfakes with a live authenticity score before content reaches users. Built a Rust reverse proxy with an asynchronous scoring pipeline in front of a self-hosted detector, diagnosing a critical recall failure and swapping in a CLIP-based classifier to reach 94% recall. Integrated a WebAssembly verification badge, a Cloudflare Worker, and a real-time React dashboard to surface results client-side without adding latency.",
+      image: "/images/deep-verify.png",
+      tags: ["Rust", "TypeScript", "React", "WebAssembly", "Supabase", "Cloudflare Workers"],
+      link: "https://github.com/jpunjabi314/deep-verify"
     },
     {
       title: "Global Origins Plotter",
       description: "\"Global Origins Plotter\" is a Qt-based map app that plots where people come from. This project loads a dataset of people (from a CSV) and displays their region of origin as dots on an interactive world map. The map is rendered using Qt Location + QML, and the backend is written in C++.",
       image: "/images/plotter.png",
       tags: ["C++", "QML", "Qt"],
-      link: "https://github.com/jpunjabi314/QT_MAP"
+      link: "https://github.com/jpunjabi314/Global-Origins-Plotter"
     },
     {
       title: "Color Sorter",
@@ -60,6 +73,13 @@ export default function Projects() {
       image: "/images/tempsensor.png",
       tags: ["Arduino", "C++", "OnShape", "Circuit Design", "Soldering"],
       link: "https://drive.google.com/file/d/1hOWGOCMHzZmpdBrY6behv4qb9dZarITA/view?usp=sharing"
+    },
+    {
+      title: "Typing Wars",
+      description: "A single- and multi-player typing game with smooth UI transitions, responsive gameplay, and real-time scoring. Integrated Firebase Authentication and Firestore for user management, high score persistence, and game history. Added AI-powered feedback and performance analytics with OpenAI API.",
+      image: "/images/typewars.png",
+      tags: ["JavaScript", "Node.js", "Firebase", "OpenAI API", "HTML", "CSS"],
+      link: "https://github.com/jpunjabi314/TypingWars"
     },
     {
       title: "EduQuest",
@@ -77,7 +97,6 @@ export default function Projects() {
   };
 
   return (
-    <> {/* Added opening fragment */}
       <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
         <div className="container mx-auto px-6 relative">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-16 tracking-tighter text-center">
@@ -92,10 +111,12 @@ export default function Projects() {
                 className="cursor-pointer group rounded-3xl overflow-hidden bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 hover:border-cyan-500/50 dark:hover:border-cyan-500/30 transition-all duration-300 shadow-xl dark:shadow-2xl flex flex-col hover:-translate-y-2"
               >
                 <div className="relative h-56 w-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -145,11 +166,15 @@ export default function Projects() {
                 
                 {/* Left Side: Image Presentation */}
                 <div className="relative md:w-1/2 h-64 md:h-auto bg-slate-100 dark:bg-slate-800 shrink-0 flex items-center justify-center p-6 md:p-10 border-b md:border-b-0 md:border-r border-slate-200 dark:border-white/10">
-                  <img 
-                    src={selectedProject.image} 
-                    alt={selectedProject.title} 
-                    className="w-full h-full max-h-[50vh] md:max-h-[70vh] object-contain rounded-xl drop-shadow-2xl"
-                  />
+                  <div className="relative w-full h-full max-h-[50vh] md:max-h-[70vh]">
+                    <Image
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-contain rounded-xl drop-shadow-2xl"
+                    />
+                  </div>
                 </div>
 
                 {/* Right Side: Scrollable Content */}
@@ -183,15 +208,21 @@ export default function Projects() {
                       {selectedProject.description}
                     </p>
 
-                    <a 
-                      href={selectedProject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold transition-all hover:shadow-lg hover:shadow-cyan-500/25 dark:hover:shadow-cyan-400/25 hover:bg-cyan-600 dark:hover:bg-cyan-400 dark:hover:text-slate-900"
-                    >
-                      View Project 
-                      <ArrowRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </a>
+                    {selectedProject.link ? (
+                      <a
+                        href={selectedProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold transition-all hover:shadow-lg hover:shadow-cyan-500/25 dark:hover:shadow-cyan-400/25 hover:bg-cyan-600 dark:hover:bg-cyan-400 dark:hover:text-slate-900"
+                      >
+                        View Project
+                        <ArrowRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 font-bold border border-slate-200 dark:border-white/10">
+                        Internal Tool — Not Publicly Available
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -199,8 +230,5 @@ export default function Projects() {
           )}
         </AnimatePresence>
       </section>
-
-      <Footer />
-    </>
   );
 }

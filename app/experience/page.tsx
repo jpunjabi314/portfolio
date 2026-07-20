@@ -3,9 +3,9 @@ import { FileText } from "lucide-react";
 
 export default function ExperiencePage() {
   return (
-    <div className="pt-32 pb-24 bg-slate-950 min-h-screen">
+    <div className="pt-32 pb-24 bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors duration-300">
       <div className="container mx-auto px-6 text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Experience</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">Experience</h1>
         
         {/* Resume Button */}
         <a 

@@ -1,8 +1,9 @@
 "use client";
-import { 
-  Terminal, Cpu, Layers, Flame, Database, GitBranch, 
-  Server, Palette, Wind, Globe, Briefcase, FileJson, Coffee, 
-  Binary, ShieldCheck, Apple, Box, Monitor, FileText, Bot, Code2, Cloud
+import {
+  Terminal, Cpu, Layers, Flame, Database, GitBranch,
+  Server, Palette, Wind, Globe, Briefcase, FileJson, Coffee,
+  Binary, ShieldCheck, Apple, Box, Monitor, FileText, Bot, Code2, Cloud,
+  Cog, PenTool, SquareKanban
 } from "lucide-react";
 
 // --- Precise Brand SVGs ---
@@ -40,6 +41,7 @@ const getIcon = (skill: string) => {
   if (s === "css") return <Palette className="w-4 h-4" />;
   if (s === "matlab") return <MatlabIcon />;
   if (s === "bash/zsh") return <Terminal className="w-4 h-4" />;
+  if (s === "rust") return <Cog className="w-4 h-4" />;
   
   // Frameworks & Tech
   if (s.includes("node")) return <Server className="w-4 h-4" />;
@@ -62,23 +64,25 @@ const getIcon = (skill: string) => {
   if (s === "onshape") return <Box className="w-4 h-4" />;
   if (s === "servicenow") return <Briefcase className="w-4 h-4" />;
   if (s === "microsoft office") return <FileText className="w-4 h-4" />;
+  if (s === "figma") return <PenTool className="w-4 h-4" />;
+  if (s === "jira") return <SquareKanban className="w-4 h-4" />;
 
   return <Terminal className="w-4 h-4" />;
 };
 
 export default function Skills() {
   const skillGroups = [
-    { 
-      title: "Programming Languages", 
-      skills: ["Python", "JavaScript", "TypeScript", "Java", "C/C++", "Swift", "HTML", "CSS", "MATLAB", "Bash/Zsh"] 
+    {
+      title: "Programming Languages",
+      skills: ["Python", "JavaScript", "TypeScript", "Java", "C/C++", "Rust", "Swift", "HTML", "CSS", "MATLAB", "Bash/Zsh"]
     },
-    { 
-      title: "Frameworks & Tech", 
-      skills: ["Node.js", "Express.js", "React", "Next.js", "Firebase", "Cloud Firestore", "OpenAI API", "Arduino"] 
+    {
+      title: "Frameworks & Tech",
+      skills: ["Node.js", "Express.js", "React", "Next.js", "Firebase", "Cloud Firestore", "OpenAI API", "Arduino"]
     },
-    { 
-      title: "Developer Tools", 
-      skills: ["Git/GitHub", "VS Code", "Xcode", "PyCharm", "IntelliJ", "Vercel", "OnShape", "ServiceNow", "Microsoft Office"] 
+    {
+      title: "Developer Tools",
+      skills: ["Git/GitHub", "VS Code", "Xcode", "PyCharm", "IntelliJ", "Vercel", "OnShape", "Figma", "Jira", "ServiceNow", "Microsoft Office"]
     }
   ];
 
