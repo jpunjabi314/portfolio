@@ -7,7 +7,7 @@ const COMMANDS = {
   help: "Available commands: about, skills, experience, projects, contact, clear, exit",
   about: "Jatin Punjabi: Computer Engineering student @ BU with a concentration on Machine Learning.",
   skills: "Technical Skills: Python, JavaScript, TypeScript, Java, C/C++, Swift, HTML, CSS, MATLAB Bash/Zsh.",
-  experience: "Currently: SWE Intern @ Livelo. Prev: Research Intern @ BU PsychoLinguistics Lab. Type 'help' for more.",
+  experience: "Currently: Platform Engineer @ Livelo. Prev: SWE Intern @ Livelo, Research Intern @ BU PsychoLinguistics Lab. Type 'help' for more.",
   projects: "Featured: Livelo Booking Widget, Livelo Admin Site, Noogie, DeepVerify.",
   contact: "Email: jpunjabi314@gmail.com | GitHub: jpunjabi314.",
 };

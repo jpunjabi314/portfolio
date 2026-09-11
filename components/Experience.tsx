@@ -1,10 +1,16 @@
 export default function Experience() {
   const experiences = [
     {
+      role: "Platform Engineer",
+      company: "Livelo",
+      period: "September 2026 - Present",
+      description: "Owning ongoing maintenance and reliability of the booking, admin, and chat platforms built during the initial internship, supporting 50+ partner locations across production systems.",
+    },
+    {
       role: "Software Engineering Intern",
       company: "Livelo",
-      period: "January 2026 - Present",
-      description: "Building a full-stack booking system with React, TypeScript, and Supabase that replaced Shopify, HubSpot, and Zapier, cutting Livelo's monthly software costs from $1,800 to roughly $150. Automated a booking workflow that previously required manual coordination across Asana, Shopify, and Zapier, reducing processing time per booking from 30-45 minutes to 10 minutes across 150-200+ orders/month. Built an admin platform (Supabase, Stripe, Postmark, Auth0) used by 50+ partner locations to manage pricing, inventory, bookings, and order flow, and shipped a real-time chat system with Ably in 2-3 weeks featuring persistence, notifications, read receipts, and file sharing.",
+      period: "January 2026 - August 2026",
+      description: "Built a full-stack booking system with React, TypeScript, and Supabase that replaced Shopify, HubSpot, and Zapier, cutting Livelo's monthly software costs from $1,800 to roughly $150. Automated a booking workflow that previously required manual coordination across Asana, Shopify, and Zapier, reducing processing time per booking from 30-45 minutes to 10 minutes across 150-200+ orders/month. Built an admin platform (Supabase, Stripe, Postmark, Auth0) used by 50+ partner locations to manage pricing, inventory, bookings, and order flow, accelerating development with Claude Code, and shipped a real-time chat system with Ably in 2-3 weeks featuring persistence, notifications, read receipts, and file sharing.",
     },
     {
       role: "Undergraduate Research Intern - Data Analytics",

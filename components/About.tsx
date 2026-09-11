@@ -23,9 +23,9 @@ export default function About() {
               and real-world impact.
             </p>
             <p>
-              My experience spans software development, hardware engineering, and advanced research. 
-              Currently, I am interning at
-              <span className="text-slate-900 dark:text-white font-medium"> Livelo</span> where I am working on software to improve the
+              My experience spans software development, hardware engineering, and advanced research.
+              Currently, I work as a Platform Engineer at
+              <span className="text-slate-900 dark:text-white font-medium"> Livelo</span>, where I am working on software to improve the
               <span className="text-slate-900 dark:text-white font-medium"> customer experience</span>.
             </p>
           </div>
