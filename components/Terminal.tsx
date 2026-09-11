@@ -8,7 +8,7 @@ const COMMANDS = {
   about: "Jatin Punjabi: Computer Engineering student @ BU with a concentration on Machine Learning.",
   skills: "Technical Skills: Python, JavaScript, TypeScript, Java, C/C++, Swift, HTML, CSS, MATLAB Bash/Zsh.",
   experience: "Currently: Platform Engineer @ Livelo. Prev: SWE Intern @ Livelo, Research Intern @ BU PsychoLinguistics Lab. Type 'help' for more.",
-  projects: "Featured: Livelo Booking Widget, Livelo Admin Site, My Livelo, Noogie, DeepVerify.",
+  projects: "Featured: Livelo Booking Widget, Livelo Admin Site, Livelo Customer Portal, Noogie, DeepVerify.",
   contact: "Email: jpunjabi314@gmail.com | GitHub: jpunjabi314.",
 };
 
