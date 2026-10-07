@@ -31,7 +31,8 @@ export default function Hero() {
                     alt="Jatin Punjabi"
                     fill
                     sizes="(min-width: 768px) 160px, 128px"
-                    className="object-cover object-[center_20%] scale-125"
+                    className="object-cover"
+                    unoptimized
                     priority
                   />
                 </div>
