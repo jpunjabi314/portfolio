@@ -1,11 +1,9 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jatinpunjabi.com";
-
-  return [
-    { url: baseUrl, lastModified: new Date() },
-    { url: `${baseUrl}/experience`, lastModified: new Date() },
-    { url: `${baseUrl}/projects`, lastModified: new Date() },
-  ];
+  return ["", "/experience", "/projects"].map((path) => ({
+    url: `${site.url}${path}`,
+    lastModified: new Date(),
+  }));
 }

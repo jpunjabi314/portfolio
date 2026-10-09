@@ -2,14 +2,19 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
+import { site } from "@/data/site";
+import { experiences } from "@/data/experience";
+import { projects } from "@/data/projects";
+import { skillGroups } from "@/data/skills";
 
-const COMMANDS = {
-  help: "Available commands: about, skills, experience, projects, contact, clear, exit",
-  about: "Jatin Punjabi: Computer Engineering student @ BU with a concentration on Machine Learning.",
-  skills: "Technical Skills: Python, JavaScript, TypeScript, Java, C/C++, Swift, HTML, CSS, MATLAB Bash/Zsh.",
-  experience: "Currently: Platform Engineer @ Livelo. Prev: SWE Intern @ Livelo, Research Intern @ BU PsychoLinguistics Lab. Type 'help' for more.",
-  projects: "Featured: Livelo Booking Widget, Livelo Admin Site, Livelo Customer Portal, Noogie, DeepVerify.",
-  contact: "Email: jpunjabi314@gmail.com | GitHub: jpunjabi314.",
+const COMMANDS: Record<string, string[]> = {
+  help: ["Available commands: about, skills, experience, projects, contact, resume, clear, exit"],
+  about: [`${site.name}: Computer Engineering student @ BU with a concentration on Machine Learning.`],
+  skills: skillGroups.map((group) => `${group.title}: ${group.skills.join(", ")}`),
+  experience: experiences.map((exp) => `${exp.role} @ ${exp.company} (${exp.period})`),
+  projects: projects.map((project) => `- ${project.title}`),
+  contact: [`Email: ${site.email}`, `GitHub: ${site.github.replace("https://", "")}`, `LinkedIn: ${site.linkedin.replace("https://", "")}`],
+  resume: [`${site.url.replace("https://", "")}${site.resume}`],
 };
 
 export default function Terminal({ onExit }: { onExit: () => void }) {
@@ -30,7 +35,7 @@ export default function Terminal({ onExit }: { onExit: () => void }) {
 
     if (cmd === "clear") setHistory([]);
     else if (cmd === "exit") onExit();
-    else if (cmd in COMMANDS) setHistory([...newHistory, COMMANDS[cmd as keyof typeof COMMANDS]]);
+    else if (Object.hasOwn(COMMANDS, cmd)) setHistory([...newHistory, ...COMMANDS[cmd]]);
     else if (cmd !== "") setHistory([...newHistory, `sh: command not found: ${cmd}`]);
     setInput("");
   };

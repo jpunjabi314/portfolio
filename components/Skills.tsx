@@ -1,10 +1,10 @@
-"use client";
 import {
   Terminal, Cpu, Layers, Flame, Database, GitBranch,
   Server, Palette, Wind, Globe, Briefcase, FileJson, Coffee,
   Binary, ShieldCheck, Apple, Box, Monitor, FileText, Bot, Code2, Cloud,
   Cog, PenTool, SquareKanban
 } from "lucide-react";
+import { skillGroups } from "@/data/skills";
 
 // --- Precise Brand SVGs ---
 const PythonIcon = () => (
@@ -71,21 +71,6 @@ const getIcon = (skill: string) => {
 };
 
 export default function Skills() {
-  const skillGroups = [
-    {
-      title: "Programming Languages",
-      skills: ["Python", "JavaScript", "TypeScript", "Java", "C/C++", "Rust", "Swift", "HTML", "CSS", "MATLAB", "Bash/Zsh"]
-    },
-    {
-      title: "Frameworks & Tech",
-      skills: ["Node.js", "Express.js", "React", "Next.js", "Firebase", "Cloud Firestore", "OpenAI API", "Arduino"]
-    },
-    {
-      title: "Developer Tools",
-      skills: ["Git/GitHub", "VS Code", "Xcode", "PyCharm", "IntelliJ", "Vercel", "OnShape", "Figma", "Jira", "ServiceNow", "Microsoft Office"]
-    }
-  ];
-
   return (
     <section id="skills" className="py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="container mx-auto px-6">

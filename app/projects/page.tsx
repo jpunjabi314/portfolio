@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Projects from "@/components/Projects";
+
+const description = "Production Livelo platforms, a deepfake-detection proxy, hackathon winners, and hardware builds.";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description,
+  alternates: { canonical: "/projects" },
+  openGraph: { title: "Projects | Jatin Punjabi", description, url: "/projects" },
+};
 
 export default function ProjectsPage() {
   return (
